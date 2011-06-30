@@ -24,4 +24,9 @@ Devcolicious::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+
+  if defined? IRB
+    Wirble.init
+    Wirble.colorize
+  end
 end

@@ -13,6 +13,7 @@ gem 'mongoid', '>= 2.0.0.beta.19'
 group :development do
   gem 'unicorn'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'wirble', '0.1.3'
 end
 
 group :test do
