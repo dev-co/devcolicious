@@ -13,4 +13,12 @@ class Bookmark
   index :url, unique: true
   index :tags
 
+  # - Validations -
+  validate :format_of_url
+
+  # - Instance Methods -
+  def format_of_url
+    errors.add :url, "is not a valid" if ( self.url =~ URI::regexp ).nil?
+  end
+
 end
