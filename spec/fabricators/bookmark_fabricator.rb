@@ -1,5 +1,5 @@
 Fabricator( :bookmark ) do
-  url   'http://www.example.com'
-  title 'Example Page'
-  tags  %w[ ruby rails ror mongodb ]
+  url   'http://mongodb.org'
+  title 'MongoDB'
+  tags  %w[ nosql sql mongodb document db database ]
 end

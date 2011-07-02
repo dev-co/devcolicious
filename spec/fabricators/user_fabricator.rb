@@ -1,4 +1,4 @@
 Fabricator( :user ) do
-  email     'john@doe.com'
+  email     { "jonh+#{ Fabricate.sequence :number }@doe.com" }
   password  's3cr3t'
 end

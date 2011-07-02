@@ -15,10 +15,22 @@ class Bookmark
 
   # - Validations -
   validate :format_of_url
+  validates_presence_of :url
+
+  # - Callbacks -
+  before_save :sanitize_tags
 
   # - Instance Methods -
   def format_of_url
     errors.add :url, "is not a valid" if ( self.url =~ URI::regexp ).nil?
+  end
+
+  def users_count
+    self.user_ids.size
+  end
+
+  def sanitize_tags
+    self.tags = self.tags.map( &:downcase ).uniq
   end
 
 end

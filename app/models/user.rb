@@ -8,4 +8,9 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # - Instance Methods -
+  def bookmarks_count
+    self.bookmark_ids.size
+  end
+
 end
