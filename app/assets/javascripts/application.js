@@ -5,3 +5,13 @@
 // the compiled file.
 //
 //= require_tree .
+$( document ).ready( function(){
+  hide_flash_message();
+} );
+
+function hide_flash_message(){
+  var flash = $( '#flash' );
+  if ( undefined != flash ){
+    flash.delay( 3000 ).slideUp( 'slow' );
+  }
+}
