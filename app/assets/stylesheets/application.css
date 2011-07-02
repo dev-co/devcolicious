@@ -5,3 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+* {
+  font-size: 10px;
+  font-family: Arial,Helvetica, sans-serif;
+}
