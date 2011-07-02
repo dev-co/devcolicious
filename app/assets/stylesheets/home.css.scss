@@ -14,6 +14,7 @@ $link-color: $main-color;
 
   a {
     font-size: 11px;
+    font-weight: bold;
     text-decoration: none;
     color: $link-color;
     &:hover { color: $link-color; }

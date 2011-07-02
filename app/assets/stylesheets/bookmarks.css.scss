@@ -1,0 +1,12 @@
+body.bookmarks {
+  form {
+    fieldset {
+      border: none;
+      label, input[type="text"] { display: block; }
+      label { font-weight: bold; }
+      input[type="text"] { width: 450px; }
+      .field_with_errors label { color: red; font-style: italic; }
+    }
+  }
+}
+
