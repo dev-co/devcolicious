@@ -1,0 +1,9 @@
+- unless @bookmarks.empty?
+  - @bookmarks.each do |bookmark|
+    .bookmark
+      span.title = link_to bookmark.title || bookmark.url, bookmark.url
+      span.users-count = bookmark.users_count
+      - unless bookmark.tags.empty?
+        ul
+          - bookmark.tags.each do |tag|
+            li = tag
