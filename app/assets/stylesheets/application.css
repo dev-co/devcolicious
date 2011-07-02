@@ -11,7 +11,7 @@
 }
 
 /* Flash Messages Section */
-.notice, .warning, .error {
+.notice, .alert, .error {
   background: black;
   height: 25px;
   padding: 10px 0 0 10px;
@@ -19,9 +19,9 @@
   border-radius: 5px;
   font-weight: bold;
 }
-.notice   { color: lime;    }
-.warning  { color: orange;  }
-.error    { color: red;     }
+.notice { color: lime;    }
+.error  { color: red;     }
+.alert  { color: orange;  }
 /* End Flash Messages Section */
 
 /* Form Fields Section */
