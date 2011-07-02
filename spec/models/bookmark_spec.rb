@@ -33,4 +33,12 @@ describe Bookmark do
     bookmark.tags.should eq( nifty_tags )
   end
 
+  it "should receive a comma separated list of tags and normalize it" do
+    dirty_tags  = 'mongo db, no sql, sql'
+    nifty_tags  = %w[ mongodb nosql sql ]
+    bookmark    = Fabricate.build( :bookmark, :dirty_tags => dirty_tags )
+    bookmark.save
+    bookmark.tags.should eq( nifty_tags )
+  end
+
 end

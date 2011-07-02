@@ -4,6 +4,9 @@ class Bookmark
   # - Relationships -
   has_and_belongs_to_many :users
 
+  # - Attribute Accessors -
+  attr_accessor :dirty_tags
+
   # - Fields -
   field :url,   type: String
   field :title, type: String
@@ -18,6 +21,7 @@ class Bookmark
   validates_presence_of :url
 
   # - Callbacks -
+  before_save :clean_dirty_tags
   before_save :sanitize_tags
 
   # - Instance Methods -
@@ -31,6 +35,12 @@ class Bookmark
 
   def sanitize_tags
     self.tags = self.tags.map( &:downcase ).uniq
+  end
+
+  def clean_dirty_tags
+    if self.dirty_tags.is_a? String
+      self.tags = self.dirty_tags.split( ',' ).map { |tag| tag.gsub( ' ', '' ) }
+    end
   end
 
 end

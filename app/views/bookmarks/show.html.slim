@@ -1,0 +1,13 @@
+' Title:
+= @bookmark.title
+br/
+' URL:
+= link_to @bookmark.url, @bookmark.url
+br/
+' Tags:
+= @bookmark.tags.join ', '
+br/
+' Users count:
+= @bookmark.users_count
+br/
+= link_to 'Back', bookmarks_path

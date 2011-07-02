@@ -1,0 +1,16 @@
+= form_for @bookmark do |f|
+  = error_messages_for @bookmark
+  fieldset
+    = f.label :url
+    = f.text_field :url
+  fieldset
+    = f.label :title
+    = f.text_field :title
+  fieldset
+    = f.label :tags
+    = f.text_field :dirty_tags
+    br/
+    small
+      i Separate tags by commas: ruby, rails, ror, php, mongodb, nosql
+  fieldset
+    = f.submit

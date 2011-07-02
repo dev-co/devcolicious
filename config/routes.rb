@@ -4,5 +4,10 @@ Devcolicious::Application.routes.draw do
 
   # - Devise Section -
   devise_for :users
+  # - End Devise Section -
+
+  # - Bookmarks Section -
+  resources :bookmarks
+  # - End Bookmarks Section -
 
 end
