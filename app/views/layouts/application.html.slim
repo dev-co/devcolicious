@@ -3,7 +3,8 @@ html
   head
     title Devcolicious
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application', 'jquery.min'
+    /= javascript_include_tag 'jquery.min', 'jquery.colorbox.min', 'application'
+    = javascript_include_tag 'jquery.min', 'jquery.colorbox.min', 'global'
     = csrf_meta_tags
   body class=controller_name
     .header
@@ -14,6 +15,8 @@ html
         = link_to 'My bookmarks', bookmarks_path
         '  |
         = link_to 'New bookmark', new_bookmark_path
+        '  |
+        = link_to 'Import from Delicious', import_bookmarks_path( :provider => :delicious ), :class => 'ajax-content'
         '  |
         = link_to 'Edit profile', edit_user_registration_path
         '  |
