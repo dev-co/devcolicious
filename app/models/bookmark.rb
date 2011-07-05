@@ -39,7 +39,14 @@ class Bookmark
 
   def clean_dirty_tags
     if self.dirty_tags.is_a? String
-      self.tags = self.dirty_tags.split( ',' ).map { |tag| tag.gsub( ' ', '' ) }
+      self.tags = Bookmark.tags_from_string self.dirty_tags
+    end
+  end
+
+  # - Class Methods -
+  class << self
+    def tags_from_string( tags )
+      tags.split( ',' ).map { |tag| tag.gsub( ' ', '' ) }
     end
   end
 
