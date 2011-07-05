@@ -1,0 +1,7 @@
+= form_tag searches_bookmarks_by_tag_path do
+  = label_tag 'Search by tags (comma separated) '
+  = text_field_tag :tags
+  - if user_signed_in?
+    = check_box_tag :global
+    ' Global?
+  = submit_tag 'Search'

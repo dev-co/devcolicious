@@ -10,4 +10,8 @@ Devcolicious::Application.routes.draw do
   resources :bookmarks
   # - End Bookmarks Section -
 
+  # - Searches Section -
+  post '/searches/bookmarks_by_tag'
+  # - End Searches Section -
+
 end
