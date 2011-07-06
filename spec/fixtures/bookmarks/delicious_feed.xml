@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/">
+  <channel>
+    <title>Delicious/johntheripper</title>
+    <link>http://www.delicious.com/johntheripper</link>
+    <description>bookmarks posted by johntheripper</description>
+    <atom:link rel="self" type="application/rss+xml" href="http://feeds.delicious.com/v2/rss/johntheripper?count=3"/>
+    <item>
+      <title>Build a Content Slider with jQuery | Brenelz Web Design Solutions</title>
+      <pubDate>Tue, 05 Jul 2011 13:20:24 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/997f2d017c5e949d0addb6cbc9a60070#johntheripper</guid>
+      <link>http://brenelz.com/blog/build-a-content-slider-with-jquery/</link>
+      <dc:creator><![CDATA[johntheripper]]></dc:creator>
+      <comments>http://www.delicious.com/url/997f2d017c5e949d0addb6cbc9a60070</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/997f2d017c5e949d0addb6cbc9a60070</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/johntheripper">johntheripper's bookmarks</source>
+      <category domain="http://www.delicious.com/johntheripper/">javascript</category>
+      <category domain="http://www.delicious.com/johntheripper/">js</category>
+      <category domain="http://www.delicious.com/johntheripper/">jquery</category>
+      <category domain="http://www.delicious.com/johntheripper/">plugin</category>
+      <category domain="http://www.delicious.com/johntheripper/">slider</category>
+    </item>
+    <item>
+      <title>Cool notification messages with CSS3 &amp; Jquery</title>
+      <pubDate>Tue, 05 Jul 2011 13:19:42 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/8b0454c3f48d04518f5aa1b6c46804a3#johntheripper</guid>
+      <link>http://www.red-team-design.com/cool-notification-messages-with-css3-jquery</link>
+      <dc:creator><![CDATA[johntheripper]]></dc:creator>
+      <comments>http://www.delicious.com/url/8b0454c3f48d04518f5aa1b6c46804a3</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/8b0454c3f48d04518f5aa1b6c46804a3</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/johntheripper">johntheripper's bookmarks</source>
+      <category domain="http://www.delicious.com/johntheripper/">jquery</category>
+      <category domain="http://www.delicious.com/johntheripper/">js</category>
+      <category domain="http://www.delicious.com/johntheripper/">javascript</category>
+      <category domain="http://www.delicious.com/johntheripper/">plugin</category>
+      <category domain="http://www.delicious.com/johntheripper/">notification</category>
+    </item>
+    <item>
+      <title>A jQuery enhanced toolbar.</title>
+      <pubDate>Tue, 05 Jul 2011 00:47:41 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/b2a7675066fd7766c13b54b439e8abbd#johntheripper</guid>
+      <link>http://javan.us/jbar/</link>
+      <dc:creator><![CDATA[johntheripper]]></dc:creator>
+      <comments>http://www.delicious.com/url/b2a7675066fd7766c13b54b439e8abbd</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/b2a7675066fd7766c13b54b439e8abbd</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/johntheripper">johntheripper's bookmarks</source>
+      <category domain="http://www.delicious.com/johntheripper/">js</category>
+      <category domain="http://www.delicious.com/johntheripper/">javascript</category>
+      <category domain="http://www.delicious.com/johntheripper/">jquery</category>
+      <category domain="http://www.delicious.com/johntheripper/">plugin</category>
+      <category domain="http://www.delicious.com/johntheripper/">toolbar</category>
+    </item>
+  </channel>
+</rss>

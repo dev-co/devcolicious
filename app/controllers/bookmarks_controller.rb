@@ -58,4 +58,25 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def import
+    if request.xhr?
+      render :layout => false
+    else
+      respond_to do |format|
+        format.html
+        format.json
+      end
+    end
+  end
+
+  def import_from_provider
+    provider = params[ :provider ]
+    case provider
+    when 'delicious'
+      Bookmark.from_delicious_feed current_user, params[ :delicious_username ]
+    end
+    flash[ :notice ] = 'Bookmarks imported successfully.'
+    redirect_to bookmarks_path
+  end
+
 end

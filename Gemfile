@@ -9,6 +9,7 @@ gem 'slim',           '0.9.4'
 gem 'jquery-rails',   '1.0.12'
 gem 'bson_ext',       '1.3.1'
 gem 'mongoid',        '2.0.2'
+gem 'feedzirra',      '0.0.24'
 
 group :development do
   gem 'unicorn',      '4.0.1'

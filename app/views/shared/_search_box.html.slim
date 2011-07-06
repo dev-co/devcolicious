@@ -2,6 +2,6 @@
   = label_tag 'Search by tags (comma separated) '
   = text_field_tag :tags
   - if user_signed_in?
-    = check_box_tag :global
+    = check_box_tag :global, nil, true
     ' Global?
   = submit_tag 'Search'

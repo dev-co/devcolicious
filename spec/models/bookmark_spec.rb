@@ -39,4 +39,16 @@ describe Bookmark do
     Bookmark.tags_from_string( dirty_tags ).should eq( nifty_tags )
   end
 
+  it "retrieves a list of bookmarks from Delicious given a delicious username" do
+    path  = File.join Rails.root, 'spec', 'fixtures', 'bookmarks', 'delicious_feed.xml'
+    xml   = File.read path
+    Bookmark.delete_all
+    Bookmark.stub!( :retrieve_feed_from_delicious ) { Feedzirra::Feed.parse xml }
+    expect do
+      user                = Fabricate( :user )
+      delicious_username  = 'johntheripper'
+      Bookmark.from_delicious_feed user, delicious_username
+    end.to change( Bookmark, :count ).by( 3 )
+  end
+
 end

@@ -45,9 +45,46 @@ class Bookmark
 
   # - Class Methods -
   class << self
+
+    def find_by_tags( tags )
+      all_in :tags => tags
+    end
+
     def tags_from_string( tags )
       tags.split( ',' ).map { |tag| tag.gsub( ' ', '' ) }
     end
+
+    def from_delicious_feed( user = nil, delicious_username )
+      bookmarks = []
+      begin
+        feed = retrieve_feed_from_delicious delicious_username
+        unless feed.is_a? Fixnum
+          feed.entries.each do |entry|
+            bookmark = Bookmark.find_or_initialize_by url: entry.url
+            bookmark.title  = entry.title
+            bookmark.tags   = entry.categories
+            bookmark.users  << user if user
+            bookmarks << bookmark if bookmark.save
+          end
+        end
+      rescue Exception => e
+        Rails.logger.error e.message
+      end
+      bookmarks
+    end
+
+    def retrieve_feed_from_delicious( username )
+      feed  = nil
+      # TODO:                                         Fix this hack  vvvvv
+      url = "http://feeds.delicious.com/v2/rss/#{ username }?count=999999"
+      begin
+        feed = Feedzirra::Feed.fetch_and_parse url
+      rescue Exception => e
+        Rails.logger.error e.message
+      end
+      feed
+    end
+
   end
 
 end
