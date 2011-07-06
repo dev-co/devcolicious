@@ -11,6 +11,10 @@ gem 'bson_ext',       '1.3.1'
 gem 'mongoid',        '2.0.2'
 gem 'feedzirra',      '0.0.24'
 
+group :production do
+  gem 'therubyracer', '0.9.3beta1'
+end
+
 group :development do
   gem 'unicorn',      '4.0.1'
   gem 'wirble',       '0.1.3'
