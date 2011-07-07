@@ -18,7 +18,6 @@ end
 group :development do
   gem 'unicorn',      '4.0.1'
   gem 'wirble',       '0.1.3'
-  gem 'ruby-debug19', '0.11.6', :require => 'ruby-debug'
 end
 
 group :test do
@@ -30,4 +29,7 @@ end
 group :development, :test do
   gem 'database_cleaner', '0.6.7'
   gem 'rspec-rails',      '2.6.1'
+
+  # Modify the conditional when ruby-debug19 supports Ruby >= 1.9.3
+  gem 'ruby-debug19', '0.11.6', :require => 'ruby-debug' if RUBY_VERSION < '1.9.3'
 end
