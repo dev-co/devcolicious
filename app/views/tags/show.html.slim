@@ -1,0 +1,6 @@
+h1= "Bookmarks with #{@tag_names.join(", ")} tags"
+- unless @bookmarks.empty?
+  - @bookmarks.each do |bookmark|
+    = render 'bookmarks/bookmark', bookmark: bookmark
+= link_to 'Back', :back
+

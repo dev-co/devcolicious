@@ -28,6 +28,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.create params[ :bookmark ]
+    Tag.cache_tags @bookmark, Time.now.utc if @bookmark.persisted?
     respond_to do |format|
       format.html do
         if @bookmark.persisted?

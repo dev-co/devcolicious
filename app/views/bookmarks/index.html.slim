@@ -1,11 +1,5 @@
 h1 My bookmarks
 - unless @bookmarks.empty?
   - @bookmarks.each do |bookmark|
-    .bookmark
-      span.title = link_to bookmark.title || bookmark.url, bookmark_path( bookmark )
-      span.users-count = bookmark.users_count
-      - unless bookmark.tags.empty?
-        ul
-          - bookmark.tags.each do |tag|
-            li = tag
+    = render 'bookmark', bookmark: bookmark
 = link_to 'Back', root_path
