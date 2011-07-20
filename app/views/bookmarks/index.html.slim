@@ -1,5 +1,13 @@
-h1 My bookmarks
-- unless @bookmarks.empty?
-  - @bookmarks.each do |bookmark|
-    = render 'bookmark', bookmark: bookmark
-= link_to 'Back', root_path
+
+.bookmark-list
+  h1 My bookmarks
+  - unless @bookmarks.empty?
+    - @bookmarks.each do |bookmark|
+      = render 'bookmark', bookmark: bookmark
+  = link_to 'Back', root_path
+
+.tag-list
+  ul.tags
+    -Tag.all.each do |tag|
+      li
+        = link_to tag.name, tag_path(id: ((current_tags)+[tag.name]).uniq.join("+")), :rel => "tag"

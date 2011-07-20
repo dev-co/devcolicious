@@ -12,7 +12,7 @@ gem 'mongoid',        '2.0.2'
 gem 'feedzirra',      '0.0.24'
 
 group :production do
-  gem 'therubyracer', '0.9.3beta1'
+  #gem 'therubyracer', '0.9.3beta1'
 end
 
 group :development do

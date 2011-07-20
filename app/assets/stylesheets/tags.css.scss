@@ -6,3 +6,24 @@ body.tags {
   // Add the tags class to your body tag
   // Then, place scoped styles here.
 }
+
+ul.tags {
+  list-style: none;
+  padding: 1px;
+  margin: 2px;
+  li {
+    margin-right: 10px;
+    margin-top: 4px;
+    background: lighten(#000, 8%);
+    border-radius: 5px;
+    padding: 2px 6px;
+    &:hover {
+      visibility: inherit;
+      background: lighten(#000, 4%);
+      outline:  0;
+    }
+    a {
+      display: block;
+    }
+  }
+}

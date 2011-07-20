@@ -1,9 +1,10 @@
-- unless @bookmarks.empty?
-  - @bookmarks.each do |bookmark|
-    .bookmark
-      span.title = link_to bookmark.title || bookmark.url, bookmark.url
-      span.users-count = bookmark.users_count
-      - unless bookmark.tags.empty?
-        ul
-          - bookmark.tags.each do |tag|
-            li = tag
+.bookmark-list
+  - unless @bookmarks.empty?
+    - @bookmarks.each do |bookmark|
+      = render 'bookmarks/bookmark', bookmark: bookmark
+
+.tag-list
+  ul.tags
+    -Tag.all.each do |tag|
+      li
+        = link_to tag.name, tag_path(id: ((current_tags)+[tag.name]).uniq.join("+")), :rel => "tag"
