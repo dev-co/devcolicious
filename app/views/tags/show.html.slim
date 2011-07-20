@@ -1,6 +1,14 @@
-h1= "Bookmarks with #{@tag_names.join(", ")} tags"
-- unless @bookmarks.empty?
-  - @bookmarks.each do |bookmark|
-    = render 'bookmarks/bookmark', bookmark: bookmark
-= link_to 'Back', :back
 
+.content
+  .bookmark-list
+    h1= "Bookmarks with #{@tag_names.join(", ")} tags"
+    - unless @bookmarks.empty?
+      - @bookmarks.each do |bookmark|
+        = render 'bookmarks/bookmark', bookmark: bookmark
+    = link_to 'Back', :back
+
+.tag-list
+  ul.tags
+    -Tag.all.each do |tag|
+      li
+        = link_to tag.name, tag_path(id: ((current_tags)+[tag.name]).uniq.join("+")), :rel => "tag"

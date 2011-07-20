@@ -30,18 +30,19 @@ $( document ).ready ->
     moved = false
     next = null
     if ev.keyCode == 106
-      next = current_bookmark.next()
-      if  next.length > 0
-        next.addClass("active")
-        moved = true
+      next = current_bookmark.next(".bookmark")
     else if ev.keyCode == 107
-      next = current_bookmark.prev()
-      if next.length > 0
-        next.addClass("active")
-        moved = true
+      next = current_bookmark.prev(".bookmark")
 
-    if moved && next
+    if next && next.length > 0
       current_bookmark.removeClass("active")
+      next.addClass("active")
       center_scroll(next)
 
   $( 'body' ).bind("keypress", move_actived_bookmark)
+
+  $(".new-bookmark fieldset").not(".url_field").hide();
+  $(".new-bookmark fieldset.url_field").click (ev)->
+    $(".new-bookmark fieldset").not(".url_field").show();
+
+

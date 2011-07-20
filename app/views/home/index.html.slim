@@ -1,7 +1,13 @@
-.bookmark-list
-  - unless @bookmarks.empty?
-    - @bookmarks.each do |bookmark|
-      = render 'bookmarks/bookmark', bookmark: bookmark
+
+.content
+  .new-bookmark
+    -@bookmark = Bookmark.new
+    = render 'bookmarks/form'
+
+  .bookmark-list
+    - unless @bookmarks.empty?
+      - @bookmarks.each do |bookmark|
+        = render 'bookmarks/bookmark', bookmark: bookmark
 
 .tag-list
   ul.tags

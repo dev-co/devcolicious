@@ -1,10 +1,14 @@
 
-.bookmark-list
-  h1 My bookmarks
-  - unless @bookmarks.empty?
-    - @bookmarks.each do |bookmark|
-      = render 'bookmark', bookmark: bookmark
-  = link_to 'Back', root_path
+.content
+  .new-bookmark
+    -@bookmark = Bookmark.new
+    = render 'bookmarks/form'
+  .bookmark-list
+    h1 My bookmarks
+    - unless @bookmarks.empty?
+      - @bookmarks.each do |bookmark|
+        = render 'bookmark', bookmark: bookmark
+    = link_to 'Back', root_path
 
 .tag-list
   ul.tags

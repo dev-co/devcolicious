@@ -1,5 +1,6 @@
-body.bookmarks {
+body.bookmarks, .new-bookmark {
   form {
+    background: black;
     fieldset {
       border: none;
       label, input[type="text"] { display: block; }

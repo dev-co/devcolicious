@@ -1,5 +1,5 @@
-.bookmark-list {
-  .bookmark{
+.content {
+  .bookmark-list .bookmark{
     display: block;
     background: black;
 
@@ -27,4 +27,14 @@
       box-shadow: 1px 1px 5px #00f;
     }
   }
+}
+
+.url_field input {
+  background: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 2px;
+  height: 32px;
+  float: left;
+  width: auto;
 }
