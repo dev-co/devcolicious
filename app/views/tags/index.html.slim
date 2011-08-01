@@ -1,4 +1,4 @@
-.content
+.main-content
   - if params[:group_by] == "alpha"
     - @tags.group_by {|tag| tag.name[0]}.each do |letter, letter_tags|
         .tag_group

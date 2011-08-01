@@ -1,13 +1,25 @@
-.content {
+$main-color: #131415;
+$highlight: #4B72ff;
+$background: #f9f9f9;
+
+.main-content {
   .bookmark-list .bookmark{
     display: block;
-    background: black;
+    background: $background;
 
     margin-top: 2px;
     padding: 10px 0 10px 10px;
     border-radius: 5px;
 
-    span.title { font-weight: bold; }
+    span.title {
+      font-weight: bold;
+      a {
+        color: $main-color;
+      }
+      a:hover {
+        color: lighten($main-color, 30%);
+      }
+    }
     span.title, span.users-count, span.url { display: block; }
 
     ul.tags li {
@@ -20,11 +32,11 @@
     }
 
     &.active {
-      -moz-box-shadow: 1px 1px 5px #00f;
-      -webkit-box-shadow: 1px 1px 5px #00f;
-      o-box-shadow: 1px 1px 1px #00f;
-      khtml-box-shadow: 1px 1px 5px #00f;
-      box-shadow: 1px 1px 5px #00f;
+      -moz-box-shadow: 1px 1px 5px $highlight;
+      -webkit-box-shadow: 1px 1px 5px $highlight;
+      o-box-shadow: 1px 1px 1px $highlight;
+      khtml-box-shadow: 1px 1px 5px $highlight;
+      box-shadow: 1px 1px 5px $highlight;
     }
   }
 }
@@ -38,3 +50,4 @@
   float: left;
   width: auto;
 }
+

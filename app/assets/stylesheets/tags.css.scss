@@ -1,7 +1,8 @@
+$background: #f9f9f9;
 
 body.tags {
   .tags-table {
-    background: black;
+    background: $background;
   }
 }
 
@@ -12,12 +13,12 @@ ul.tags {
   li {
     margin-right: 10px;
     margin-top: 4px;
-    background: lighten(#000, 8%);
+    background: darken($background, 4%);
     border-radius: 5px;
     padding: 2px 6px;
     &:hover {
       visibility: inherit;
-      background: lighten(#000, 4%);
+      background: darken($background, 8%);
       outline:  0;
     }
     a {
