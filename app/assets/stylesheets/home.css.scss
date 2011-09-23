@@ -1,23 +1,53 @@
-$main-color: lime;
-$link-color: $main-color;
-.bookmark {
+$main-color: #131415;
+$highlight: #4B72ff;
+$background: #f9f9f9;
 
-  display: block;
-  background: black;
-  color: $main-color;
-  margin-top: 2px;
-  padding: 10px 0 10px 10px;
-  border-radius: 5px;
+.main-content {
+  .bookmark-list .bookmark{
+    display: block;
+    background: $background;
 
-  span.title { font-weight: bold; }
-  span.title, span.users-count, span.url { display: block; }
+    margin-top: 2px;
+    padding: 10px 0 10px 10px;
+    border-radius: 5px;
 
-  a {
-    font-size: 11px;
-    font-weight: bold;
-    text-decoration: none;
-    color: $link-color;
-    &:hover { color: $link-color; }
+    span.title {
+      font-weight: bold;
+      a {
+        color: $main-color;
+      }
+      a:hover {
+        color: lighten($main-color, 30%);
+      }
+    }
+    span.title, span.users-count, span.url { display: block; }
+
+    ul.tags li {
+      float: left;
+      position: relative;
+    }
+
+    .users-count {
+      clear: both;
+    }
+
+    &.active {
+      -moz-box-shadow: 1px 1px 5px $highlight;
+      -webkit-box-shadow: 1px 1px 5px $highlight;
+      o-box-shadow: 1px 1px 1px $highlight;
+      khtml-box-shadow: 1px 1px 5px $highlight;
+      box-shadow: 1px 1px 5px $highlight;
+    }
   }
-
 }
+
+.url_field input {
+  background: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 2px;
+  height: 32px;
+  float: left;
+  width: auto;
+}
+

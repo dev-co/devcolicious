@@ -1,0 +1,9 @@
+.bookmark
+  span.title = link_to bookmark.title || bookmark.url, bookmark_path( bookmark )
+  - unless bookmark.tags.empty?
+    ul.tags
+      - bookmark.tags.each do |tag|
+        li
+          = link_to tag, tag_path(id: ((current_tags)+[tag]).uniq.join("+")), :rel => "tag"
+  .users-count
+    = "shared by #{bookmark.users_count} users"

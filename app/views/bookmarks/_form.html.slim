@@ -1,6 +1,6 @@
 = form_for @bookmark do |f|
   = error_messages_for @bookmark
-  fieldset
+  fieldset.url_field
     = f.label :url
     = f.text_field :url
   fieldset

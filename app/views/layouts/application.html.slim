@@ -7,24 +7,26 @@ html
     = javascript_include_tag 'jquery.min', 'jquery.colorbox.min', 'global'
     = csrf_meta_tags
   body class=controller_name
-    .header
-      = render 'shared/flash_messages'
-      - if user_signed_in?
-        = current_user.email
-        '  |
-        = link_to 'My bookmarks', bookmarks_path
-        '  |
-        = link_to 'New bookmark', new_bookmark_path
-        '  |
-        = link_to 'Import from Delicious', import_bookmarks_path( :provider => :delicious ), :class => 'ajax-content'
-        '  |
-        = link_to 'Edit profile', edit_user_registration_path
-        '  |
-        = link_to 'Sign out', destroy_user_session_path
-      - else
-        = link_to 'Sign in', new_user_session_path
-        '  or
-        = link_to 'Sign up', new_user_registration_path
-      = render 'shared/search_box'
-    .wrapper  = yield
-    .footer
+    .wrapper
+      .header
+        = render 'shared/flash_messages'
+        - if user_signed_in?
+          = current_user.email
+          '  |
+          = link_to 'My bookmarks', bookmarks_path
+          '  |
+          = link_to 'New bookmark', new_bookmark_path
+          '  |
+          = link_to 'Import from Delicious', import_bookmarks_path( :provider => :delicious ), :class => 'ajax-content'
+          '  |
+          = link_to 'Edit profile', edit_user_registration_path
+          '  |
+          = link_to 'Sign out', destroy_user_session_path
+        - else
+          = link_to 'Sign in', new_user_session_path
+          '  or
+          = link_to 'Sign up', new_user_registration_path
+        = render 'shared/search_box'
+      .content
+        = yield
+      .footer

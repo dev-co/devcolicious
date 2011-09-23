@@ -14,6 +14,10 @@ Devcolicious::Application.routes.draw do
   resources :bookmarks
   # - End Bookmarks Section -
 
+  # - Tags Section -
+  resources :tags, :constraints => { :id => /\S+/ }
+  # - End Tags Section -
+
   # - Searches Section -
   post '/searches/bookmarks_by_tag'
   # - End Searches Section -

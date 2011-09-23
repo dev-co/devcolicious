@@ -59,12 +59,16 @@ class Bookmark
       begin
         feed = retrieve_feed_from_delicious delicious_username
         unless feed.is_a? Fixnum
+          time = Time.now.utc
           feed.entries.each do |entry|
             bookmark = Bookmark.find_or_initialize_by url: entry.url
             bookmark.title  = entry.title
             bookmark.tags   = entry.categories
             bookmark.users  << user if user
-            bookmarks << bookmark if bookmark.save
+            if bookmark.save
+              bookmarks << bookmark
+              Tag.cache_tags bookmark, time
+            end
           end
         end
       rescue Exception => e

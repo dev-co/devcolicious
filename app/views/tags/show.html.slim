@@ -1,14 +1,11 @@
 
 .main-content
-  .new-bookmark
-    -@bookmark = Bookmark.new
-    = render 'bookmarks/form'
   .bookmark-list
-    h1 My bookmarks
+    h1= "Bookmarks with #{@tag_names.join(", ")} tags"
     - unless @bookmarks.empty?
       - @bookmarks.each do |bookmark|
-        = render 'bookmark', bookmark: bookmark
-    = link_to 'Back', root_path
+        = render 'bookmarks/bookmark', bookmark: bookmark
+    = link_to 'Back', :back
 
 .tag-list
   ul.tags

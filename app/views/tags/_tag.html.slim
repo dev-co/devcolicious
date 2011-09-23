@@ -1,0 +1,6 @@
+
+span class="tag tag_#{tag}"
+  = link_to tag.name, tag_path(id: tag.name), rel: "tag"
+span
+  b
+    = "x #{tag.count.to_i}"

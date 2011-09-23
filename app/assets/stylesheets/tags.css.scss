@@ -1,0 +1,28 @@
+$background: #f9f9f9;
+
+body.tags {
+  .tags-table {
+    background: $background;
+  }
+}
+
+ul.tags {
+  list-style: none;
+  padding: 1px;
+  margin: 2px;
+  li {
+    margin-right: 10px;
+    margin-top: 4px;
+    background: darken($background, 4%);
+    border-radius: 5px;
+    padding: 2px 6px;
+    &:hover {
+      visibility: inherit;
+      background: darken($background, 8%);
+      outline:  0;
+    }
+    a {
+      display: block;
+    }
+  }
+}

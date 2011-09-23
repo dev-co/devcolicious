@@ -1,0 +1,19 @@
+.main-content
+  - if params[:group_by] == "alpha"
+    - @tags.group_by {|tag| tag.name[0]}.each do |letter, letter_tags|
+        .tag_group
+          .letter
+            = letter
+          table.tags-table
+          - letter_tags.each_slice(4) do |tags|
+            tr
+              - tags.each do |tag|
+                td
+                  = render "tag", tag: tag
+  - else
+    table.tags-table
+      - @tags.each_slice(4) do |tags|
+        tr
+          - tags.each do |tag|
+            td
+              = render "tag", tag: tag
