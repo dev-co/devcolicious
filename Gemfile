@@ -27,12 +27,12 @@ group :development, :test do
   gem 'rspec-rails',      '2.6.1'
 end
 if RUBY_ENGINE.eql? 'jruby' or RUBY_VERSION < '1.9'
-  gem 'ruby-debug'
+  gem 'ruby-debug', group: :development
   gem 'therubyrhino', '1.72.8', group: :production
   gem 'jruby-openssl' if RUBY_ENGINE.eql? 'jruby'
 else
   gem 'unicorn', '4.1.1'
   # Modify the conditional when ruby-debug19 supports Ruby >= 1.9.3
-  gem 'ruby-debug19', '0.11.6', require: 'ruby-debug' if RUBY_VERSION < '1.9.3'
+  gem 'ruby-debug19', '0.11.6', group: :development, require: 'ruby-debug' if RUBY_VERSION < '1.9.3'
   gem 'therubyracer', '0.9.3beta1', group: :production
 end
